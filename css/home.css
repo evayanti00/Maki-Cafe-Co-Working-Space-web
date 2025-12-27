@@ -1,1 +1,237 @@
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+/* BODY */
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #d1b78f;
+}
+/*HEADER*/
+header {
+    background-image: url('../assets/img/bg-header.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 160px 50px;
+    text-align: center;
+    position: relative;
+}
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 60px 20px;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    header p {
+        font-size: 1rem;
+    }
+}
+
+/* bagian navigasi */
+.filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 8px rgba(255, 2, 2, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.filter button {
+    padding: 12px 28px;
+    border: 2px solid #8B4513;
+    background-color: #fff;
+    color: #8B4513;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+.filter button:hover {
+    background-color: #8B4513;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+}
+.filter button:active {
+    transform: translateY(0);
+}
+@media (max-width: 768px) {
+    .filter {
+        padding: 30px 15px;
+        gap: 10px;
+    }
+    .filter button {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+}
+
+/* bagian konten home */
+section {
+    padding: 60px 20px;
+}
+
+/* bagian h2 */
+section h2 {
+    font-size: 2.5rem;
+    color: #8B4513;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 20px;
+}
+section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #D2691E, #76461b);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* text box */
+.box-text {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(242, 242, 242, 0.9));
+    padding: 40px;
+    border-radius: 12px;
+    border-left: 5px solid #D2691E;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #444;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.12);
+    text-align: justify;
+}
+.box-text::first-letter {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #8B4513;
+}
+@media (max-width: 768px) {
+    section {
+        padding: 40px 15px;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    .box-text {
+        padding: 25px;
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+}
+
+/* SLIDESHOW */
+.slideshow {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+}
+.slides img {
+  width: 100%;
+  display: none;
+  object-fit: cover;
+}
+
+.slides img.active {
+  display: block;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    animation: fadeInUp 0.8s ease-out;
+}
+.filter {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+section {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* UTILITIES */
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    .box-text {
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* SCROLLBAR STYLING */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8B4513;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #D2691E;
+}
+
+/* PRINT STYLES */
+@media print {
+    header, .filter {
+        box-shadow: none;
+    }
+}
