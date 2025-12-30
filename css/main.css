@@ -12,7 +12,7 @@ layout dasar(container, section) ini semua masuk ke main.css */
 /*font dan warna global */
 body{
     font-family:'Poppins',sans-serif;
-    background-color:#1e9c1c;
+    background: color #d9800c;
     color:#3e2c1c;
     line-height: 1.6;
 }
