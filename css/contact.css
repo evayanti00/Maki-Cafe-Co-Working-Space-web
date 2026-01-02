@@ -6,12 +6,7 @@
   --radius: 12px;
 }
 
-/*body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--cream);
-  color: var(--text);
-}*/
+
 body {
   height: 100%;
   margin: 0;
@@ -52,6 +47,24 @@ body {
   flex: 1;
 }
 
+.kontak-lokasi {
+  flex: 1;
+}
+
+.btn-maps {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--cream);
+  color: #d2691e;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-maps:hover {
+  backgroud: #fffdd0;
+}
+
 .container {
   max-width: 960px;
   margin: auto;
@@ -62,6 +75,7 @@ body {
   font-size: 32px;
   color: var(--brown);
   margin-bottom: 8px;
+  margin-top: 90px;
 }
 
 .slogan {
@@ -82,6 +96,7 @@ body {
   padding: 20px;
   border-radius: var(--radius);
   box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  margin-top: 40px;
 }
 
 /*.kontak-box h2, .sosmed-box h2 {
