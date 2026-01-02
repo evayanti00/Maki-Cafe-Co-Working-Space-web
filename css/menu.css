@@ -1,1 +1,107 @@
 
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+:root{
+  --bg:#AC6F17;
+  --text: #ffffff;
+  --muted: #b05937;
+  --primary: #0d9488;       /* teal */
+  --card-border: #eaeaea;
+  --shadow: 0 8px 24px rgba(0,0,0,0.12);
+  --radius: 14px;
+}
+
+/* ===== Layout umum ===== */
+body { font-family: system-ui, Arial, sans-serif; background: var(--bg); color: var(--text); }
+header { padding: 28px 20px; text-align: center; background: #76461B; }
+header h1 { margin: 0 0 6px; font-size: 28px; }
+header p { margin: 0; color: var(--muted); }
+
+/* ===== Filter tombol ===== */
+.filter-container {
+  display: flex; gap: 10px; justify-content: center; padding: 16px 20px; flex-wrap: wrap;
+}
+.filter-container button {
+  padding: 10px 16px; border: 1px solid #ddd; background: #fff; color: #333;
+  border-radius: 999px; cursor: pointer; transition: all .2s ease;
+}
+.filter-container button:hover { background: #f0f0f0; }
+.filter-container button.active {
+  background: var(--primary); color: #fff; border-color: var(--primary);
+  box-shadow: 0 6px 18px rgba(13,148,136,.28);
+}
+
+/* ===== Grid daftar menu ===== */
+.menu-container.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  padding: 18px 20px 80px;
+}
+
+/* ===== Kartu menu ===== */
+.menu-card {
+  position: relative;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  background: #D1B78F;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .2s ease;
+}
+.menu-card img {
+  width: 100%; height: 170px; object-fit: cover; display: block;
+}
+.menu-card h2 { font-size: 18px; margin: 12px 14px 4px; }
+.menu-card .desc { margin: 0 14px 12px; color: var(--muted); font-size: 14px; }
+.menu-card .price { margin: 0 14px 16px; font-weight: 600; color: #111; }
+
+/* ===== Hover animasi ===== */
+.menu-card::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(13,148,136,0.06), rgba(13,148,136,0.18));
+  opacity: 0; transition: opacity .18s ease;
+}
+.menu-card .hover-desc {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #222; font-size: 14px; line-height: 1.4;
+  transform: translateY(8px); opacity: 0;
+  transition: all .18s ease;
+  border-top: 1px solid #eee;
+}
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: rgba(13,148,136,.35);
+}
+.menu-card:hover::after { opacity: 1; }
+.menu-card:hover .hover-desc {
+  transform: translateY(0); opacity: 1;
+}
+
+/* ===== Modal ===== */
+.modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,.5);
+  display: none; align-items: center; justify-content: center; padding: 24px;
+}
+.modal.open { display: flex; }
+.modal-content {
+  position: relative;
+  width: min(680px, 95vw);
+  border-radius: 16px; background: #fff; overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.modal-content .close {
+  position: absolute; right: 14px; top: 10px;
+  font-size: 22px; cursor: pointer; color: #444;
+}
+.modal-content img { width: 100%; height: 280px; object-fit: cover; display: block; }
+.modal-content h2 { margin: 16px; font-size: 22px; }
+.modal-content p { margin: 0 16px 12px; color: var(--muted); }
+
+/* ===== Util: sembunyikan saat difilter ===== */
+.menu-card[hidden] { display: none !important; }
+
