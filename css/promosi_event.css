@@ -1,4 +1,44 @@
-.spasi-bawah {
-    margin-top: 100px;
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(0,0,0,0.2);
 }
 
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.7);
+  border: none;
+  font-size: 2rem;
+  padding: 0 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* debug visual
+.carousel-track {
+    border: 2px dashed red;
+}
+.carousel-track img {
+    border: 2px solid blue;
+}
