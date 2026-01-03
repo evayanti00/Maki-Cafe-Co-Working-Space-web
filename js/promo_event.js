@@ -1,46 +1,22 @@
 
 const track = document.querySelector('.carousel-track');
-const images = document.querySelectorAll('.carousel-track img');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
+const nextBtn = document.querySelector('.carousel-btn.next');
 
-/*console.log("JS aktif");
-console.log("Jumlah gambar:", images.length);*/
+// Geser otomatis setiap 4 detik
+let currentIndex = 0;
+const slideCount = track.children.length;
+const slideWidth = track.children[0].offsetWidth;
 
-let index = 0;
-let autoSlide;
-
-function updateCarousel() {
-  track.style.transform = `translateX(-${index * 100}%)`;
+function moveToSlide(index) {
+  track.style.transform = `translateX(-${index * slideWidth}px)`;
 }
 
 function nextSlide() {
-  index = (index + 1) % images.length;
-  updateCarousel();
+  currentIndex = (currentIndex + 1) % slideCount;
+  moveToSlide(currentIndex);
 }
 
-function prevSlide() {
-  index = (index - 1 + images.length) % images.length;
-  updateCarousel();
-}
+nextBtn.addEventListener('click', nextSlide);
 
-function startAutoSlide() {
-  autoSlide = setInterval(nextSlide, 4000);
-}
-
-function resetAutoSlide() {
-  clearInterval(autoslide);
-  startAutoSlide();
-}
-
-nextBtn.addEventListener('click', () => {
-  nextSlide();
-  resetAutoSlide();
-});
-
-prevBtn.addEventListener('click', () => {
-  prevSlide();
-  resetAutoSlide();
-});
-
-startAutoSlide();
+// Auto-slide
+setInterval(nextSlide, 4000);
