@@ -54,16 +54,17 @@ header {
     z-index: 100;
 }
 .filter button {
-    padding: 12px 25px;
+    padding: 15px 55px;
     border: 2px solid #76461b;
     background-color: #f2e9e1;
     color: #76461b;
-    font-size: 0.95rem;
+    font-family: "arial", sans-serif;
+    font-size: 1.3rem;
     font-weight: 600;
     border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.9px;
 }
 .filter button:hover {
     background-color: #76461b;
@@ -83,18 +84,20 @@ header {
 
 /* bagian konten home */
 section {
-    padding: 60px 20px;
+    padding: 60px;
 }
 
 /* bagian h1 */
 section h1 {
-    font-size: 2.5rem;
+    font-family: "playfair display", georgia, serif;
+    font-size: 2.3rem;
+    letter-spacing: 0.9px;
     color: #d1b78f;
     margin-bottom: 30px;
     text-align: center;
     font-weight: 700;
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 section h1::after {
     content: '';
@@ -103,19 +106,23 @@ section h1::after {
     height: 4px;
     background: linear-gradient(to right, #ad9274, #ac6f17);
     margin: 15px auto 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
     border-radius: 2px;
+    position: relative;
 }
 
 /* text box */
 .box-text {
+    font-family: "arial", sans-serif;
     background: #f2e9e1;
-    padding: 40px;
+    padding: 90px;
     border-radius: 15px;
     border-left: 5px solid #ac6f17;
-    line-height: 1.8;
-    font-size: 1.35rem;
-    color: #444;
-    max-width: 900px;
+    line-height: 1.9;
+    font-size: 1.40rem;
+    color: #76461b;
+    max-width: 1200px;;
     margin: 0 auto;
     text-align: justify;
 }
@@ -142,42 +149,35 @@ section h1::after {
 }
 
 /* ===== Slideshow Suasana Cafe ===== */
-.suasana Maki Cafe section h2 {
-    font-size: 2.5rem;
+section.slideshow h2 {
+    font-family: "playfair display", georgia, serif;
+    font-size: 2.3rem;
     color: #d1b78f;
     margin-bottom: 30px;
     text-align: center;
+    letter-spacing: 0.9px;
     font-weight: 700;
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
-.suasana Maki Cafe section h2::after {
+section.slideshow h2::after {
     content: '';
     display: block;
-    width: 80px;
+    width: 250px;
     height: 4px;
     background: linear-gradient(to right, #ad9274, #ac6f17);
     margin: 15px auto 0;
-    border-radius: 2px;
-}
-
-.Suasana Maki Cafe slideshow {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.slideshow h2 {
-    font-size: 2rem;
-    color: #d1b78f;
+    margin-top: 30px;
     margin-bottom: 30px;
+    border-radius: 2px;
+    position: relative;
 }
 
 .slider {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.25);
 }
 
 .slides {
@@ -189,7 +189,7 @@ section h1::after {
 .slides img {
     flex: 0 0 25%;
     width: 25%;
-    height: 500px;
+    height: 700px;
     object-fit: cover;
 }
 
@@ -214,7 +214,9 @@ section h1::after {
 
 /* ===== Rekomendasi Menu ===== */
 section h2 {
-    font-size: 2.2rem;
+    font-family: "playfair display", georgia, serif;
+    font-size: 2.3rem;
+    letter-spacing: 0.9px;
     color: #d1b78f;
     margin-bottom: 30px;
     text-align: center;
@@ -225,16 +227,14 @@ section h2 {
 section h2::after {
     content: '';
     display: block;
-    width: 100px;
+    width: 180px;
     height: 4px;
     background: linear-gradient(to right, #ad9274, #ac6f17);
     margin: 15px auto 0;
     border-radius: 8px;
-}
-
-.rekomendasi {
-    text-align: center;
-    margin-top: 80px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
 }
 
 .rekomendasi h2 {
@@ -269,39 +269,44 @@ section h2::after {
 }
 
 .card h3 {
+    font-family: "georgia", sans-serif;
     text-align: center;
     margin-top: 15px;
     color: #ac6f17;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 
 .card p {
+    font-family: "arial", sans-serif;
     text-align: center;
     padding: 20px 25px 20px;
     font-size: 1.2rem;
-    color: #444;
+    color: #76461b;
     line-height: 1.6;
 }
 
 /* ===== Tombol Lihat Menu ===== */
 .btn-menu {
-    margin-top: 100px;
+    margin-top: 80px;
     text-align: center;
 }
-
-.btn-menu a {
-    display:inline-block;
-    padding: 14px 36px;
-    background: linear-gradient(135deg, #8B4513, #D2691E);
-    color: #fff;
+.btn-menu button {
+    font-family: "arial", sans-serif;
+    font-size: 1.1rem;
+    padding: 15px 35px;
+    background-color: #f2e9e1;
+    color: #76461b;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 15px;
+    border: 2px solid #76461b;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.9px;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.btn-menu a:hover {
-    background: linear-gradient(135deg, #6f3610, #b85616);
+.btn-menu button:hover {
+    background-color: #76461b;
+    color: #f2e9e1;
     transform: translateY(-3px);
 }
