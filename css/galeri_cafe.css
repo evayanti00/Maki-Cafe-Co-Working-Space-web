@@ -1,1 +1,11 @@
-
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+:root{
+  --bg:#AC6F17;
+  --text: #ffffff;
+  --muted: #b05937;
+  --primary: #0d9488;       /* teal */
+  --card-border: #eaeaea;
+  --shadow: 0 8px 24px rgba(0,0,0,0.12);
+  --radius: 14px;
+}
