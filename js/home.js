@@ -52,10 +52,14 @@ if (header) {
 }
 
 /* ===== Slideshow Suasana Cafe ===== */
+// Use CSS animation for the slideshow. If you prefer JS-driven slides,
+// set `useCssSlide` to false.
+const useCssSlide = true;
+
 let currentSlide = 0;
 const slides = document.querySelector('.slides');
 
-if (slides) {
+if (slides && !useCssSlide) {
     const totalSlides = slides.children.length;
     const slideInterval = 5000; // 5 detik
 
