@@ -19,15 +19,12 @@ body {
 header { 
   position: relative;
   width: 100%;
-  height: 550px; /* Sesuaikan tinggi header */
-  background-image: url('../assets/img/bg-headerfix.png'); 
+  min-height: 50vh; /* tinggi header */
+  background-image: url('../assets/img/bg-header.png'); 
   background-size: cover;
   background-position: center;
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
   z-index: 0;
-
+  
   cursor: pointer;
 }
 
@@ -163,7 +160,7 @@ section.slideshow h2 {
 section.slideshow h2::after {
     content: '';
     display: block;
-    width: 250px;
+    width: 300px;
     height: 4px;
     background: linear-gradient(to right, #ad9274, #ac6f17);
     margin: 15px auto 0;
@@ -264,14 +261,14 @@ section h2::after {
 
 .card img {
     width: 100%;
-    height: 290px;
+    height: 300px;
     object-fit: cover;
 }
 
 .card h3 {
     font-family: "georgia", sans-serif;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 25px;
     color: #ac6f17;
     font-size: 1.3rem;
 }
@@ -279,7 +276,7 @@ section h2::after {
 .card p {
     font-family: "arial", sans-serif;
     text-align: center;
-    padding: 20px 25px 20px;
+    padding: 20px 25px;
     font-size: 1.2rem;
     color: #76461b;
     line-height: 1.6;
@@ -292,14 +289,13 @@ section h2::after {
 }
 .btn-menu button {
     font-family: "arial", sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     padding: 15px 35px;
     background-color: #f2e9e1;
-    color: #76461b;
-    text-decoration: none;
+    color: #ac6f17;
     border-radius: 15px;
     border: 2px solid #76461b;
-    font-weight: 600;
+    font-weight: 550;
     letter-spacing: 0.9px;
     cursor: pointer;
     transition: all 0.3s ease;

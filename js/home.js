@@ -52,8 +52,7 @@ if (header) {
 }
 
 /* ===== Slideshow Suasana Cafe ===== */
-// Use CSS animation for the slideshow. If you prefer JS-driven slides,
-// set `useCssSlide` to false.
+
 const useCssSlide = true;
 
 let currentSlide = 0;
