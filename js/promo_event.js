@@ -1,22 +1,32 @@
+console.log("Script sudah jalan");
 
-const track = document.querySelector('.carousel-track');
-const nextBtn = document.querySelector('.carousel-btn.next');
+const modal = document.getElementById("modal");
+const modalimg = document.getElementById("modal-img");
+const captionText = document.getElementById("caption");
+const closeBtn = document.getElementById("close");
 
-// Geser otomatis setiap 4 detik
-let currentIndex = 0;
-const slideCount = track.children.length;
-const slideWidth = track.children[0].offsetWidth;
 
-function moveToSlide(index) {
-  track.style.transform = `translateX(-${index * slideWidth}px)`;
-}
+document.querySelectorAll(".clickable").forEach(img => {
+  img.addEventListener("click", () => {
+    modal.style.display = "block";
+    modalimg.src = img.src;
+    captionText.textContent = img.alt;
+    console.log("gambar diklik:", img.src);
 
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % slideCount;
-  moveToSlide(currentIndex);
-}
+   //  console.log("Klik gambar:", img.src);   
+     //   console.log("Modal src:", modalImg.src);
+   // console.log("modal src:", modalimg.src);
+  });
+});
 
-nextBtn.addEventListener('click', nextSlide);
 
-// Auto-slide
-setInterval(nextSlide, 4000);
+closeBtn.onclick = () => {
+  modal.style.display = "none";
+};
+
+
+
+
+
+
+

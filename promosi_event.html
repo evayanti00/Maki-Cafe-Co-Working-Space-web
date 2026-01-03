@@ -9,24 +9,28 @@
 </head>
 <body>
     
-    <div class="promo-event">
+    <header id="header" class="header-content">
+        <h1>Promo & Event</h1>
+    </header>
+
+    <section class="promo-event">
         <div class="img-container">
-                <img src="assets/img/promo1.png" alt="promo"> 
+                <img src="assets/img/promo1.png" alt="promo" class="clickable"> 
             </div>
         <div class="img-container">
-                <img src="assets/img/promo2.png" alt="promo">
+                <img src="assets/img/promo2.png" alt="promo" class="clickable">
             </div>
         <div class="img-container">
-                <img src="assets/img/event.png" alt="event">
+                <img src="assets/img/event.png" alt="event" class="clickable">
             </div>
-     </div>
+        </section>
               
     <div id="modal" class="modal">
         <span id="close">&times</span>
-        <img class="modal-content" id="modal-img">
+        <img id="modal-img" class="modal-content" alt="">
         <div id="caption"></div>
     </div>
 
-    
+    <script src="js/promo_event.js"></script>
 </body>
 </html>
