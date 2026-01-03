@@ -46,12 +46,6 @@ header {
   margin: auto;
 }
 
-.slogan {
-  text-align: center;
-  font-size: 16px;
-  color: var(--mocha);
-  margin-bottom: 32px;
-}
 
 .grid {
   display: grid;
