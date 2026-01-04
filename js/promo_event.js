@@ -19,7 +19,6 @@ document.querySelectorAll(".clickable").forEach(img => {
   });
 });
 
-
 closeBtn.onclick = () => {
   modal.style.display = "none";
 };
