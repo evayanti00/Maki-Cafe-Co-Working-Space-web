@@ -63,6 +63,9 @@ document.querySelectorAll('.menu-card').forEach(card => {
 
 window.closeModal = function(){ modal.classList.remove('open'); };
 modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+const closeBtn = document.getElementById('closeModal');
+if (closeBtn) closeBtn.addEventListener('click', closeModal);
 ``
 
 

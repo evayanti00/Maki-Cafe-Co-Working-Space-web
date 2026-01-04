@@ -13,13 +13,15 @@
     <p>Temukan makanan dan minuman favoritmu!</p>
   </header>
 
-  <!-- Filter -->
-  <nav class="filter-container">
-    <button data-filter="all">Semua</button>
-    <button data-filter="makanan">Makanan</button>
-    <button data-filter="minuman">Minuman</button>
-    <button data-filter="dessert">Dessert</button>
-  </nav>
+  
+  <section class="menu-section" aria-label="Menu Cafe">
+    <nav class="filter-container" aria-label="Filter galeri">
+      <button data-filter="all" class="filter-btn active">Semua</button>
+      <button data-filter="makanan" class="filter-btn">Makanan</button>
+      <button data-filter="minuman" class="filter-btn">Minuman</button>
+      <button data-filter="dessert" class="filter-btn">Dessert</button>
+    </nav>
+  </section>
 
   <!-- Daftar Menu -->
   <section class="menu-container grid">
@@ -187,22 +189,20 @@
       <p class="desc">Churros goreng keemasan, renyah di luar, balutan gula halus.</p>
       <p class="price">Rp 18.000</p>
     </article>
+</section>
 
-    <!-- Modal -->
-  <div id="modal" class="modal">
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-label="Pratinjau menu">
     <div class="modal-content">
-      <span class="close" onclick="closeModal()">×</span>
-
+      <button type="button" id="closeModal" class="close" aria-label="Tutup">×</button>
       <img id="modal-img" src="" alt="Menu" />
       <h2 id="modal-title"></h2>
       <p id="modal-description"></p>
       <p id="modal-price"></p>
     </div>
-</div>
-</section>
+  </div>
 
   <!-- Script -->
-  <script src="js/menu.js"></script>
+<script src="js/menu.js"></script>
 </body>
 </html>
 
