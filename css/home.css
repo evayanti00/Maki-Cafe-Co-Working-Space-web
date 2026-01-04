@@ -3,16 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
     scroll-behavior: smooth;
 }
 
 /* BODY */
 body {
     line-height: 1.6;
-    color: #f6e7e7;
     background-color: #76461b;
 }
 /*HEADER*/
@@ -23,11 +19,8 @@ header {
   background-image: url('../assets/img/bg-header.png'); 
   background-size: cover;
   background-position: center;
-  z-index: 0;
-  
   cursor: pointer;
 }
-
 @media (max-width: 768px) {
     header {
         padding: 60px 20px;
@@ -37,7 +30,7 @@ header {
     }
 }
 
-/* bagian navigasi */
+/* navigasi */
 .filter {
     display: flex;
     justify-content: center;
@@ -45,7 +38,6 @@ header {
     padding: 40px;
     background-color: #d1b78f;
     flex-wrap: wrap;
-    box-shadow: 0 2px 8px rgba(255, 2, 2, 0.08);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -55,7 +47,7 @@ header {
     border: 2px solid #76461b;
     background-color: #f2e9e1;
     color: #76461b;
-    font-family: "arial", sans-serif;
+    font-family: arial, sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
     border-radius: 15px;
@@ -79,18 +71,16 @@ header {
     }
 }
 
-/* bagian konten home */
+/* konten home */
 section {
     padding: 60px;
 }
-
 /* bagian h1 */
 section h1 {
-    font-family: "playfair display", georgia, serif;
+    font-family: "playfair display", serif;
     font-size: 2.3rem;
     letter-spacing: 0.9px;
     color: #d1b78f;
-    margin-bottom: 30px;
     text-align: center;
     font-weight: 700;
     position: relative;
@@ -105,19 +95,17 @@ section h1::after {
     margin: 15px auto 0;
     margin-top: 30px;
     margin-bottom: 30px;
-    border-radius: 2px;
-    position: relative;
 }
 
 /* text box */
 .box-text {
-    font-family: "arial", sans-serif;
+    font-family: arial, sans-serif;
     background: #f2e9e1;
-    padding: 90px;
+    padding: 60px;
     border-radius: 15px;
     border-left: 5px solid #ac6f17;
     line-height: 1.9;
-    font-size: 1.40rem;
+    font-size: 1.30rem;
     color: #76461b;
     max-width: 1200px;;
     margin: 0 auto;
@@ -132,22 +120,19 @@ section h1::after {
     section {
         padding: 40px 15px;
     }
-
     section h2 {
         font-size: 1.8rem;
     }
-
     .box-text {
         padding: 25px;
         font-size: 0.95rem;
         line-height: 1.7;
     }
-    
 }
 
 /* ===== Slideshow Suasana Cafe ===== */
 section.slideshow h2 {
-    font-family: "playfair display", georgia, serif;
+    font-family: "playfair display", serif;
     font-size: 2.3rem;
     color: #d1b78f;
     margin-bottom: 30px;
@@ -169,49 +154,32 @@ section.slideshow h2::after {
     border-radius: 2px;
     position: relative;
 }
-
 .slider {
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 15px;
+    position: relative;
 }
-
 .slides {
     display: flex;
-    width: 400%;
-    animation: slideCafe 12s linear infinite;
+    transition: transform 0.5s ease-in-out;
 }
-
 .slides img {
-    flex: 0 0 25%;
-    width: 25%;
+    flex: 0 0 100%;
+    width: 100%;
     height: 700px;
     object-fit: cover;
 }
-
-/* Animasi slideshow dan loop */
-@keyframes slideCafe {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(0); }
-    25% { transform: translateX(-25%); }
-    45% { transform: translateX(-25%); }
-    50% { transform: translateX(-50%); }
-    70% { transform: translateX(-50%); }
-    75% { transform: translateX(-75%); }
-    95% { transform: translateX(-75%); }
-    100% { transform: translateX(0); }
-}
-
 @media (max-width: 768px) {
     .slides img {
         height: 250px;
     }
 }
 
-/* ===== Rekomendasi Menu ===== */
+/* rekomendasi Menu */
 section h2 {
-    font-family: "playfair display", georgia, serif;
+    font-family: "playfair display", serif;
     font-size: 2.3rem;
     letter-spacing: 0.9px;
     color: #d1b78f;
@@ -233,20 +201,17 @@ section h2::after {
     margin-bottom: 30px;
     position: relative;
 }
-
 .rekomendasi h2 {
     font-size: 2rem;
     color: #ac6f17;
     margin-bottom: 15px;
 }
-
 .menu-populer {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
 }
-
 .card {
     width: 380px;
     background-color: #fff;
@@ -254,27 +219,23 @@ section h2::after {
     overflow: hidden;
     transition: transform 0.3s ease;
 }
-
 .card:hover {
     transform: translateY(-8px);
 }
-
 .card img {
     width: 100%;
     height: 300px;
     object-fit: cover;
 }
-
 .card h3 {
-    font-family: "georgia", sans-serif;
+    font-family: "georgia", serif;
     text-align: center;
     margin-top: 25px;
     color: #ac6f17;
     font-size: 1.3rem;
 }
-
 .card p {
-    font-family: "arial", sans-serif;
+    font-family: "arial", serif;
     text-align: center;
     padding: 20px 25px;
     font-size: 1.2rem;
@@ -282,13 +243,13 @@ section h2::after {
     line-height: 1.6;
 }
 
-/* ===== Tombol Lihat Menu ===== */
+/* Tombol Lihat Menu */
 .btn-menu {
     margin-top: 80px;
     text-align: center;
 }
 .btn-menu button {
-    font-family: "arial", sans-serif;
+    font-family: arial, sans-serif;
     font-size: 1.3rem;
     padding: 15px 35px;
     background-color: #f2e9e1;
@@ -300,7 +261,6 @@ section h2::after {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .btn-menu button:hover {
     background-color: #76461b;
     color: #f2e9e1;

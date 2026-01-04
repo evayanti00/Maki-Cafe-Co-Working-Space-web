@@ -1,79 +1,32 @@
-// fungsi utama navigasi
-function filterMaki(target) {
-    let sectionId = '';
-
-    switch (target) {
-        case 'home':
-            sectionId = 'home';
-            break;
-
-        case 'menu':
-            sectionId = 'menu';
-            break;
-
-        case 'gallerycafe':
-            sectionId = 'gallerycafe';
-            break;
-
-        case 'promo&event':
-            sectionId = 'promo-event';
-            break;
-
-        case 'kontak&lokasi':
-            sectionId = 'kontak-lokasi';
-            break;
-
-        default:
-            console.warn('Section tidak ditemukan');
-            return;
-    }
-
-    const section = document.getElementById(sectionId);
-
-    if (section) {
-        section.scrollIntoView({
-            behavior: 'smooth'
+document.addEventListener('DOMContentLoaded', () => {
+    /* klik header kembali ke home */
+    const header = document.getElementById('header');
+    if (header) {
+        header.addEventListener('click', () => {
+            const homeSection = document.getElementById('home');
+            if (homeSection) {
+                homeSection.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     }
-}
 
-/* ===== Klik Header Kembali ke Home ===== */
-const header = document.getElementById('header');
-
-if (header) {
-    header.addEventListener('click', function () {
-        const homeSection = document.getElementById('home');
-        if (homeSection) {
-            homeSection.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-}
-
-/* ===== Slideshow Suasana Cafe ===== */
-
-const useCssSlide = true;
-
-let currentSlide = 0;
-const slides = document.querySelector('.slides');
-
-if (slides && !useCssSlide) {
-    const totalSlides = slides.children.length;
-    const slideInterval = 5000; // 5 detik
+    /* slideshow otomatis */
+    const slides = document.querySelector('.slides');
+    const slideImages = slides.querySelectorAll('img');
+    const totalSlides = slideImages.length;
+    let currentIndex = 0;
 
     function showSlide(index) {
-        const slideWidth = slides.children[0].clientWidth;
-        slides.style.transform = `translateX(-${index * slideWidth}px)`;
+        if (index >= totalSlides) index = 0;
+        if (index < 0) index = totalSlides - 1;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        currentIndex = index;
     }
+    /* auto slide tiap 5 detik */
+    setInterval(() => {
+        showSlide(currentIndex + 1);
+    }, 5000);
+    /* tampilkan slide pertama saat halaman load*/
+    showSlide(0);
+});
 
-    function nextSlide() {
-        currentSlide++;
-        if (currentSlide >= totalSlides) {
-            currentSlide = 0;
-        }
-        showSlide(currentSlide);
-    }
-
-    setInterval(nextSlide, slideInterval);
-}
