@@ -1,1 +1,75 @@
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #d1b78f;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #76461b; 
+  height: 120px;
+  display: flex;
+  align-items: center;       /* vertikal tengah */
+  justify-content: center;   /* horizontal tengah */
+  color: white;
+}
+
+.judul-header {
+  font-size: 32px;
+  margin: 0;
+}
+
+
+.kontak-lokasi {
+  flex: 1;
+}
+
+.btn-maps {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ad9274;
+  color: #472309;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 110px;
+}
+
+.kontak-box, .sosmed-box {
+  background: #f3e7dc;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  margin-top: 40px;
+}
+
+.kontak-box ul {
+  padding-left: 16px;
+}
+
+.footer-note {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 14px;
+  color: var(--text);
+  background: #ad9274; /* kasih background biar jelas */
+  padding: 12px;
+} 
+
 
