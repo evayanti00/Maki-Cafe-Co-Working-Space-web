@@ -100,3 +100,16 @@ body {
   font-size: 40px;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .promo-event {
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .img-container {
+    width: 150px;
+    height: 250px;
+  }
+}
