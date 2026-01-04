@@ -11,8 +11,8 @@ header {
   background-color: #76461b; 
   height: 120px;
   display: flex;
-  align-items: center;       /* vertikal tengah */
-  justify-content: center;   /* horizontal tengah */
+  align-items: center;       
+  justify-content: center;   
   color: white;
 }
 
@@ -49,7 +49,7 @@ header {
   column-gap: 110px;
 }
 
-.kontak-box, .sosmed-box {
+.kontak-box {
   background: #f3e7dc;
   padding: 20px;
   border-radius: 12px;
@@ -68,8 +68,38 @@ header {
   width: 100%;
   font-size: 14px;
   color: var(--text);
-  background: #ad9274; /* kasih background biar jelas */
+  background: #ad9274; 
   padding: 12px;
 } 
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+
+  .container {
+    min-height: 70vh;
+    padding: 20px;
+  }
+
+  .kontak-box {
+    margin-top: 20px;
+  }
+
+  .judul-header {
+    font-size: 24px;
+  }
+
+  header {
+    height: 100px;
+  }
+
+  .footer-note {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
 
 
