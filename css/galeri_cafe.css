@@ -29,12 +29,6 @@ header h1 {
   color: #76441b;
 }
 
-header p {
-  margin: 0; 
-  font-size: 18px;
-  color: #76441b;
-}
-
 .gallery-container.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
