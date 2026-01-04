@@ -79,4 +79,4 @@ Maki-Cafe-Co-Working-Space-web/
 
 
 ##Tautan GitHub Pages
-
+https://evayanti00.github.io/Maki-Cafe-Co-Working-Space-web/
