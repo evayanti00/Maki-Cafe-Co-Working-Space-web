@@ -228,14 +228,14 @@ section h2::after {
     object-fit: cover;
 }
 .card h3 {
-    font-family: "georgia", serif;
+    font-family: "playfair display", serif;
     text-align: center;
     margin-top: 25px;
     color: #ac6f17;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 .card p {
-    font-family: "arial", serif;
+    font-family: arial, sans-serif;
     text-align: center;
     padding: 20px 25px;
     font-size: 1.2rem;
