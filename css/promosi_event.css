@@ -6,13 +6,13 @@ body {
 
 .header-content {
   background: #d1b78f; 
-  padding: 50px;
+  padding: 20px;
   font-size: 20px;
   color: #4b2e1e;
   position: relative;
   z-index: 1;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  width: 110%;
+  width: calc(100% - 40px);
   height: 50px;
   display: flex;
   align-items: center;
@@ -30,14 +30,13 @@ body {
   justify-content: center;
   gap: 30px;
   padding: 40px;  
-  margin-left: 19%;  
   flex-wrap: nowrap;
   overflow-x: auto;
 }
 
 .img-container {
-  width: 360px;
-  height: 480px;
+  width: 200px;
+  height: 300px;
   background-color: #d1b78f;
   border-radius: 12px;
   overflow: hidden;
@@ -46,6 +45,7 @@ body {
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease;
+  padding: 20px;
 }
 
 .img-container img {
@@ -55,9 +55,11 @@ body {
  cursor: pointer;
 }
 
-.img-container:hover img {
-  transform: scale(1.02);
+.img-container:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
+
 
 .modal {
   display: none; 
