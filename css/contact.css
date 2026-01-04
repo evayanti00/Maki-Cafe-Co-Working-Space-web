@@ -4,6 +4,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #d1b78f;
+  font-family: Arial, sans-serif;
 }
 
 header {
