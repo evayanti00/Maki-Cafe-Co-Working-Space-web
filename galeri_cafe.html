@@ -5,15 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery Cafe</title>
   <link rel="stylesheet" href="css/galeri_cafe.css">
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
- <header id="header">
-   <h1>Gallery Cafe</h1>
- </header>
+  <header id="header"></header>
+    <section class="filter container">
+        <button onclick="window.location.href='index.html'">Home</button>
+        <button onclick="window.location.href='menu.html'">Menu</button>
+        <button onclick="window.location.href='galeri_cafe.html'">Gallery Cafe</button>
+        <button onclick="window.location.href='promosi_event.html'">Promo & Event</button>
+        <button onclick="window.location.href='contact.html'">Kontak & Lokasi</button>
+    </section>
 
-
-  <section class="gallery-container grid">
+ <section class="gallery-container grid">
 
     <figure class="gallery-card">
       <img src="assets/img/gemini_outdoor.jpeg" alt="Outdoor">
@@ -155,6 +160,11 @@
       <div class="modal-content">
         <button class="close" aria-label="Close">×</button>
         <img id="modal-img" src="" alt="Gallery">
+      </div>
+    </div>
+
+     <div class="footer-note">
+        <p>Maki Cafe & Co Working Space — hadir di Bali</p>
       </div>
     </div>
     
