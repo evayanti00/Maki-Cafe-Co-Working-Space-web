@@ -63,33 +63,33 @@ section {
 .open {
     width: 500px;
     background-color: #fdecc8;
-    border: 3px solid #d1b78f;
+    border: 3px solid #fdecc8;
     border-radius: 3px;
     overflow: hidden;
     transition: transform 0.3s ease;
-    margin-top: 120px;
+    margin-top: 60px;
     margin-bottom: 50px;
 }
 .open:hover {
-    transform: translateY(-8px);
+    transform: translateY(-15px);
 }
 .open img {
     width: 100%;
-    height: 340px;
+    height: 300px;
     object-fit: cover;
-    margin-bottom: 60px;
+    margin-bottom: 10px;
 }
 .open h2 {
-    font-family: arial sans-serif;
+    font-family: "playfair display", serif;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 1px;
     margin-bottom: 10px;
     color: #283618;
     font-size: 1.6rem;
     line-height: 1px;
 }
 .open p {
-    font-family: arial, sans-serif;
+    font-family: "playfair display", serif;
     text-align: center;
     padding: 20px 25px;
     font-size: 1.4rem;
@@ -103,7 +103,8 @@ section.slideshow h2 {
     font-family: "playfair display", serif;
     font-size: 2.3rem;
     color: #283618;
-    margin-bottom: 70px;
+    margin-top: auto;
+    margin-bottom: 60px;
     text-align: center;
     letter-spacing: 0.9px;
     font-weight: 700;
@@ -139,7 +140,7 @@ section h2 {
     font-size: 2.3rem;
     letter-spacing: 0.9px;
     color: #283618;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
     text-align: center;
     font-weight: 600;
     position: relative;
@@ -164,7 +165,7 @@ section h2 {
     transition: transform 0.3s ease;
 }
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-20px);
 }
 .card img {
     width: 100%;
@@ -189,14 +190,14 @@ section h2 {
 
 /* Tombol Lihat Menu */
 .btn-menu {
-    margin-top: 80px;
+    margin-top: 60px;
     text-align: center;
 }
 .btn-menu button {
     font-family: arial, sans-serif;
     font-size: 1.3rem;
     padding: 15px 35px;
-    background-color: #d1b78f;
+    background-color: #fdecc8;
     color: #ac6f17;
     border-radius: 15px;
     border: 2px solid #fdecc8;
@@ -206,9 +207,42 @@ section h2 {
     transition: all 0.3s ease;
 }
 .btn-menu button:hover {
-    background-color: #fdecc8;
+    background-color: #ac6f17;
     border: #ac6f17;
-    color: #ac6f17;
+    color: #fdecc8;
     transform: translateY(-3px);
 }
+/*promo & event*/
+.btn-promoevent {
+    margin-top: 60px;
+    text-align: center;
+}
+.btn-promoevent button {
+    font-family: arial, sans-serif;
+    font-size: 1.3rem;
+    padding: 15px 35px;
+    background-color: #fdecc8;
+    color: #ac6f17;
+    border-radius: 15px;
+    border: 2px solid #fdecc8;
+    font-weight: 550;
+    letter-spacing: 0.9px;
+    cursor: pointer;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+}
+.btn-promoevent button:hover {
+    background-color: #ac6f17;
+    border: #ac6f17;
+    color: #fdecc8;
+    transform: translateY(-3px);
+
+}
+.promo&event img {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+}
+
 /* footer */

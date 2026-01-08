@@ -10,8 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* slideshow otomatis */
-    const slides = document.querySelector('.slides');
+    
+/* slideshow otomatis */
+const slides = document.querySelector('.slides');
     const slideImages = slides.querySelectorAll('img');
     const totalSlides = slideImages.length;
     let currentIndex = 0;
