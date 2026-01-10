@@ -15,8 +15,8 @@ body {
 header { 
   position: relative;
   width: 100%;
-  height: 650px; /* tinggi header */
-  background-image: url('../assets/img/bg-header.png'); 
+  height: 550px; /* tinggi header */
+  background-image: url('../assets/img/bg-headerfix.png'); 
   background-size: cover;
   background-position: center;
   cursor: pointer;
@@ -85,6 +85,7 @@ header {
   color: var(--text);
   background: #ad9274; 
   padding: 12px;
+  text-align: center;
 } 
 
 @media (max-width: 768px) {
