@@ -1,19 +1,6 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-/* BODY */
-body {
-    line-height: 1.6;
-    background-color: #76461b;
-}
-/*HEADER*/
+/* body */
+/* header */
 /* navigasi */
-
 /* konten home */
 section {
     padding: 60px;
