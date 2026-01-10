@@ -11,11 +11,6 @@ document.querySelectorAll(".clickable").forEach(img => {
     modal.style.display = "block";
     modalimg.src = img.src;
     captionText.textContent = img.alt;
-    console.log("gambar diklik:", img.src);
-
-   //  console.log("Klik gambar:", img.src);   
-     //   console.log("Modal src:", modalImg.src);
-   // console.log("modal src:", modalimg.src);
   });
 });
 
