@@ -18,3 +18,7 @@ buttons.forEach(btn => {
     });
     filterContainer.appendChild(button);
 });
+
+console.log("JS aktif");
+
+
