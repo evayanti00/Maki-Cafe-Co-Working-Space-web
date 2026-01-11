@@ -48,7 +48,7 @@
   border-radius: 8px;
   text-decoration: none;
   display: inline-block;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .btn-maps:hover {
