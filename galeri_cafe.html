@@ -10,15 +10,10 @@
 
 <body>
   <header id="header"></header>
-    <section class="filter container">
-        <button onclick="window.location.href='index.html'">Home</button>
-        <button onclick="window.location.href='menu.html'">Menu</button>
-        <button onclick="window.location.href='galeri_cafe.html'">Gallery Cafe</button>
-        <button onclick="window.location.href='promosi_event.html'">Promo & Event</button>
-        <button onclick="window.location.href='contact.html'">Kontak & Lokasi</button>
-    </section>
-
- <section class="gallery-container grid">
+    <section class="filter container" id="filterContainer"></section>
+ 
+  <div id="gallery-container" class= "gallery-container grid"></div>
+    
 
     <figure class="gallery-card">
       <img src="assets/img/gemini_outdoor.jpeg" alt="Outdoor">
@@ -169,6 +164,7 @@
     </div>
     
     <script src="js/galery_cafe.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>
