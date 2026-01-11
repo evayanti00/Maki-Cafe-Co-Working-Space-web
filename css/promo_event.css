@@ -37,7 +37,7 @@ body {
 }
 
 .img-container {
-  background: #f2e9e1;
+  background: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
