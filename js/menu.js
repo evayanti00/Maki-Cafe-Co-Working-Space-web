@@ -236,8 +236,18 @@ function createMenuCard(item) {
 
 const container = document.getElementById('menu-container');
 
+// Ensure a usable image placeholder exists to avoid runtime ReferenceError
+if (typeof IMG_PLACEHOLDER === 'undefined') {
+  if (typeof window !== 'undefined' && typeof window.IMG_PLACEHOLDER !== 'undefined') {
+    var IMG_PLACEHOLDER = window.IMG_PLACEHOLDER;
+  } else {
+    var IMG_PLACEHOLDER = 'assets/img/placeholder.jpg';
+  }
+}
+
 function renderMenu(category = 'all') {
-  
+  if (!container) return;
+
   container.innerHTML = '';
   const frag = document.createDocumentFragment();
 
@@ -259,12 +269,13 @@ function debounce(fn, wait = 160) {
   let t;
   return (...args) => {
     clearTimeout(t);
-    t = setTimeout(() => fn.apply(this, args), wait);
+    t = setTimeout(() => fn(...args), wait);
   };
 }
 
 
 function renderMenuItems(items) {
+  if (!container) return;
   container.innerHTML = '';
   const frag = document.createDocumentFragment();
   items.forEach(item => frag.appendChild(createMenuCard(item)));
@@ -303,30 +314,36 @@ const searchEl = document.getElementById('menuSearch');
 if (searchEl) searchEl.addEventListener('input', debounce(handleSearchInput, 180));
 
 const modal = document.getElementById('modal');
-const mImg = document.getElementById('modal-img');
-const mTitle = document.getElementById('modal-title');
-const mDesc = document.getElementById('modal-description');
-const mPrice = document.getElementById('modal-price');
+let mImg = null, mTitle = null, mDesc = null, mPrice = null;
+if (modal) {
+  mImg = document.getElementById('modal-img');
+  mTitle = document.getElementById('modal-title');
+  mDesc = document.getElementById('modal-description');
+  mPrice = document.getElementById('modal-price');
+}
 
 function openModal(item) {
-  mImg.src = item.img || IMG_PLACEHOLDER;
-  mImg.alt = item.title || 'Menu';
-  mTitle.textContent = item.title || '';
-  mDesc.textContent = item.desc || '';
-  mPrice.textContent = item.price || '';
+  if (!modal) return;
+  if (mImg) { mImg.src = item.img || IMG_PLACEHOLDER; mImg.alt = item.title || 'Menu'; }
+  if (mTitle) mTitle.textContent = item.title || '';
+  if (mDesc) mDesc.textContent = item.desc || '';
+  if (mPrice) mPrice.textContent = item.price || '';
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
 }
 
 function closeModal() {
+  if (!modal) return;
   modal.classList.remove('open');
   modal.setAttribute('aria-hidden', 'true');
 }
 
-window.closeModal = closeModal;
-modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-const closeBtn = document.getElementById('closeModal');
-if (closeBtn) closeBtn.addEventListener('click', closeModal);
+if (modal) {
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  const closeBtn = document.getElementById('closeModal');
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (typeof window !== 'undefined') window.closeModal = closeModal;
+}
 
 
 renderMenu('all');

@@ -137,6 +137,9 @@ const galleryData = [
 ];
 
 
+if (typeof IMG_PLACEHOLDER === 'undefined') {
+  var IMG_PLACEHOLDER = 'assets/img/placeholder.jpg';
+}
 
 const container = document.getElementById('gallery-container');   
 const modal      = document.getElementById('modal');               
@@ -145,6 +148,7 @@ const closeBtn   = modal?.querySelector('.close');
 let currentIndex = -1;
 
 function renderGallery() {
+  if (!container) return;
   const fragment = document.createDocumentFragment();
 
   galleryData.forEach((item, idx) => {
@@ -153,8 +157,11 @@ function renderGallery() {
     figure.tabIndex = 0; 
 
     const img = document.createElement('img');
-    img.src = item.img;
+    img.src = item.img || IMG_PLACEHOLDER;
     img.alt = item.title || 'Galeri Maki Cafe'; 
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.onerror = () => { img.onerror = null; img.src = IMG_PLACEHOLDER; img.classList.add('img-fallback'); };
 
     const cap = document.createElement('figcaption');
     cap.textContent = item.title;
@@ -183,21 +190,21 @@ function renderGallery() {
   container.appendChild(fragment);
 }
 
-
 function openModal(index) {
   currentIndex = index;
   const { img, title } = galleryData[currentIndex];
-  modalImg.src = img;
-  modalImg.alt = title || 'Preview gambar';
+  if (!modal) return;
+  if (modalImg) { modalImg.src = img || IMG_PLACEHOLDER; modalImg.alt = title || 'Preview gambar'; }
   modal.setAttribute('aria-hidden', 'false');
   modal.classList.add('open');
   closeBtn?.focus();
 }
 
 function closeModal() {
+  if (!modal) return;
   modal.classList.remove('open');
   modal.setAttribute('aria-hidden', 'true');
-  modalImg.src = '';
+  if (modalImg) modalImg.src = '';
   currentIndex = -1;
 }
 
@@ -205,7 +212,8 @@ function showPrev() {
   if (currentIndex < 0) return;
   currentIndex = (currentIndex - 1 + galleryData.length) % galleryData.length;
   const { img, title } = galleryData[currentIndex];
-  modalImg.src = img;
+  if (!modalImg) return;
+  modalImg.src = img || IMG_PLACEHOLDER;
   modalImg.alt = title || 'Preview gambar';
 }
 
@@ -213,19 +221,18 @@ function showNext() {
   if (currentIndex < 0) return;
   currentIndex = (currentIndex + 1) % galleryData.length;
   const { img, title } = galleryData[currentIndex];
-  modalImg.src = img;
+  if (!modalImg) return;
+  modalImg.src = img || IMG_PLACEHOLDER;
   modalImg.alt = title || 'Preview gambar';
 }
 
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) closeModal();
-});
-
-closeBtn?.addEventListener('click', closeModal);
-
+if (modal) {
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  closeBtn?.addEventListener('click', closeModal);
+}
 
 document.addEventListener('keydown', (e) => {
-  if (!modal.classList.contains('open')) return;
+  if (!modal || !modal.classList.contains('open')) return;
   if (e.key === 'Escape') closeModal();
   if (e.key === 'ArrowLeft') showPrev();
   if (e.key === 'ArrowRight') showNext();
@@ -233,9 +240,11 @@ document.addEventListener('keydown', (e) => {
 
 
 function ensureModalNavButtons() {
+  if (!modal) return;
   if (!modal.querySelector('.modal-prev')) {
     const prevBtn = document.createElement('button');
     prevBtn.className = 'modal-prev';
+    prevBtn.type = 'button';
     prevBtn.setAttribute('aria-label', 'Gambar sebelumnya');
     prevBtn.textContent = '‹';
     prevBtn.addEventListener('click', (e) => {
@@ -248,6 +257,7 @@ function ensureModalNavButtons() {
   if (!modal.querySelector('.modal-next')) {
     const nextBtn = document.createElement('button');
     nextBtn.className = 'modal-next';
+    nextBtn.type = 'button';
     nextBtn.setAttribute('aria-label', 'Gambar berikutnya');
     nextBtn.textContent = '›';
     nextBtn.addEventListener('click', (e) => {
