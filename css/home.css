@@ -9,9 +9,9 @@ section {
 /* text box */
 #home {
     display: flex;
-    justify-content: space-between; /* home-text di kiri, open di kanan */
+    justify-content: space-between; 
     align-items: flex-start;
-    gap: 10px;                      /* jarak horizontal antar box */
+    gap: 10px;                    
     margin-bottom: 50px;
 }
 .home-text h2 {
@@ -19,6 +19,7 @@ section {
     font-size: 2.5rem;
     color: #283618;
     text-align: left;
+    font-weight: 600;
     margin-left: 0;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -42,25 +43,12 @@ section {
     font-weight: bold;
     color: #76461b;
 }
-@media (max-width: 768px) {
-    section {
-        padding: 40px 15px;
-    }
-    section h2 {
-        font-size: 1.8rem;
-    }
-    .box-text {
-        padding: 25px;
-        font-size: 0.95rem;
-        line-height: 1.7;
-    }
-}
 /*card*/
 .open {
     width: 500px;
     background-color: #fdecc8;
-    border: 3px solid #fdecc8;
-    border-radius: 3px;
+    border: 1px solid #fdecc8;
+    border-radius: 1px;
     overflow: hidden;
     transition: transform 0.3s ease;
     margin-top: 60px;
@@ -82,7 +70,6 @@ section {
     margin-bottom: 10px;
     color: #283618;
     font-size: 1.6rem;
-    line-height: 1px;
 }
 .open p {
     font-family: "playfair display", serif;
@@ -90,11 +77,10 @@ section {
     padding: 20px 25px;
     font-size: 1.4rem;
     color: #283618;
-    line-height: 0.2;
-    margin-bottom: 30px;
+    line-height: 1.4;
+    margin-bottom: 20px;
 }
-
-/* ===== Slideshow Suasana Cafe ===== */
+/* slideshow suasana cafe */
 section.slideshow h2 {
     font-family: "playfair display", serif;
     font-size: 2.3rem;
@@ -103,7 +89,7 @@ section.slideshow h2 {
     margin-bottom: 60px;
     text-align: center;
     letter-spacing: 0.9px;
-    font-weight: 700;
+    font-weight: 600;
     position: relative;
     padding-bottom: 30px;
 }
@@ -124,13 +110,7 @@ section.slideshow h2 {
     height: 700px;
     object-fit: cover;
 }
-@media (max-width: 768px) {
-    .slides img {
-        height: 250px;
-    }
-}
-
-/* rekomendasi Menu */
+/* rekomendasi menu */
 section h2 {
     font-family: "playfair display", serif;
     font-size: 2.3rem;
@@ -183,8 +163,7 @@ section h2 {
     color: #76461b;
     line-height: 1.6;
 }
-
-/* Tombol Lihat Menu */
+/* tombol lihat menu */
 .btn-menu {
     margin-top: 60px;
     text-align: center;
@@ -197,7 +176,7 @@ section h2 {
     color: #ac6f17;
     border-radius: 15px;
     border: 2px solid #fdecc8;
-    font-weight: 550;
+    font-weight: 600;
     letter-spacing: 0.9px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -209,3 +188,40 @@ section h2 {
     transform: translateY(-3px);
 }
 /* footer */
+@media (max-width: 768px) {
+    section {
+        padding: 40px 15px;
+    }
+    section h2 {
+        font-size: 1.8rem;
+    }
+    .box-text {
+        padding: 25px;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        max-width: 100%;
+    }
+    #home {
+        flex-direction: column;
+        align-items: center;
+    }
+    .open {
+        width: 100%;
+    }
+    .slides img {
+        height: 250px;
+    }
+}
+@media (max-width: 480px) {
+    .box-text {
+        font-size: 0.85rem;
+        padding: 15px;
+    }
+    .card {
+        width: 100%;
+    }
+    .btn-menu button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}

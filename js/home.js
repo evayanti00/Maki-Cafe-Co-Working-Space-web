@@ -8,15 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 homeSection.scrollIntoView({ behavior: 'smooth' });
             }
         });
-    }
-
-    
+    }    
 /* slideshow otomatis */
 const slides = document.querySelector('.slides');
     const slideImages = slides.querySelectorAll('img');
     const totalSlides = slideImages.length;
     let currentIndex = 0;
-
     function showSlide(index) {
         if (index >= totalSlides) index = 0;
         if (index < 0) index = totalSlides - 1;
@@ -27,7 +24,7 @@ const slides = document.querySelector('.slides');
     setInterval(() => {
         showSlide(currentIndex + 1);
     }, 5000);
-    /* tampilkan slide pertama saat halaman load*/
+    /* tampil slide pertama saat halaman load*/
     showSlide(0);
 });
 
