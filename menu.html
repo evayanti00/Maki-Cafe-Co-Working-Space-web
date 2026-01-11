@@ -4,23 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Menu Cafe</title>
-    <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
-  <header id="header"></header>
-    <section class="filter container" id="filterContainer"></section>
+  <header id="header"></header> 
+  <section class="filter container" id="filterContainer"></section>
+ 
+  <section class="menu-section" aria-label="Menu Cafe">
+    <nav class="filter-container" aria-label="Filter galeri">
+      <div class="search-wrap">
+        <label for="menuSearch" class="sr-only">Cari menu</label>
+        <input
+          type="search"
+          id="menuSearch"
+          class="search-input"
+          placeholder="Cari menu… (contoh: 'kopi', 'burger', 'matcha')"
+          autocomplete="off"
+          aria-describedby="searchHelp"/>
+        <small id="searchHelp" class="search-help">
+          Ketik nama, deskripsi, kategori, atau harga.
+        </small>
+      </div>
 
-    <section class="menu-section" aria-label="Menu Cafe">
-      <nav class="filter-container" aria-label="Filter galeri">
-        <button data-filter="all" class="filter-btn active">Semua</button>
-        <button data-filter="makanan" class="filter-btn">Makanan</button>
-        <button data-filter="minuman" class="filter-btn">Minuman</button>
-        <button data-filter="dessert" class="filter-btn">Dessert</button>
-      </nav>
-    </section>
+      <button data-filter="all" class="filter-btn active">Semua</button>
+      <button data-filter="makanan" class="filter-btn">Makanan</button>
+      <button data-filter="minuman" class="filter-btn">Minuman</button>
+      <button data-filter="dessert" class="filter-btn">Dessert</button>
+    </nav>
+    <p id="searchResultAnnounce" class="sr-only" aria-live="polite"></p>
+  </section>
 
-  <!-- Daftar Menu -->
+
   <div id="menu-container" class="menu-container grid"></div>
 
 
@@ -34,7 +49,10 @@
     </div>
   </div>
 
-  <!-- Script -->
+  <div class="footer-note">
+    <p>Maki Cafe & Co Working Space — hadir di Bali</p>
+  </div>
+
 <script src="js/menu.js"></script>
 <script src="js/main.js"></script>
 </body>

@@ -1,8 +1,4 @@
 
-// ===== 1) DATA MENU: dipindahkan dari HTML ke array objek =====
-// Gunakan kategori: 'makanan' | 'minuman' | 'dessert'
-const IMG_PLACEHOLDER = 'images/placeholder.jpg';
-
 const menuData = [
   // --- MAKANAN ---
   {
@@ -195,7 +191,7 @@ const menuData = [
   },
 ];
 
-// ===== 2) FUNGSI RENDER KARTU =====
+
 function createMenuCard(item) {
   const card = document.createElement('div');
   card.className = `menu-card ${item.category}`;
@@ -233,7 +229,7 @@ function createMenuCard(item) {
   card.appendChild(priceEl);
   card.appendChild(overlay);
 
-  // klik buka modal
+  
   card.addEventListener('click', () => openModal(item));
   return card;
 }
@@ -241,7 +237,7 @@ function createMenuCard(item) {
 const container = document.getElementById('menu-container');
 
 function renderMenu(category = 'all') {
-  // Faster: gunakan DocumentFragment untuk menghindari banyak reflow
+  
   container.innerHTML = '';
   const frag = document.createDocumentFragment();
 
@@ -252,18 +248,60 @@ function renderMenu(category = 'all') {
   data.forEach(item => frag.appendChild(createMenuCard(item)));
   container.appendChild(frag);
 
-  // sinkronkan tombol aktif
+  
   document.querySelectorAll('.filter-container button').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.filter === category);
   });
 }
 
-// ===== 3) FILTER BUTTON EVENTS =====
+
+function debounce(fn, wait = 160) {
+  let t;
+  return (...args) => {
+    clearTimeout(t);
+    t = setTimeout(() => fn.apply(this, args), wait);
+  };
+}
+
+
+function renderMenuItems(items) {
+  container.innerHTML = '';
+  const frag = document.createDocumentFragment();
+  items.forEach(item => frag.appendChild(createMenuCard(item)));
+  container.appendChild(frag);
+}
+
+function handleSearchInput(e) {
+  const q = (e.target.value || '').trim().toLowerCase();
+  const announce = document.getElementById('searchResultAnnounce');
+  if (!q) {
+    renderMenu('all');
+    if (announce) announce.textContent = '';
+    return;
+  }
+  const filtered = menuData.filter(item =>
+    item.title.toLowerCase().includes(q) ||
+    (item.desc && item.desc.toLowerCase().includes(q)) ||
+    (item.category && item.category.toLowerCase().includes(q)) ||
+    (item.price && item.price.toLowerCase().includes(q))
+  );
+  renderMenuItems(filtered);
+  if (announce) announce.textContent = `${filtered.length} hasil untuk "${e.target.value}"`;
+}
+
+
 document.querySelectorAll('.filter-container button').forEach(btn => {
-  btn.addEventListener('click', () => renderMenu(btn.dataset.filter));
+  btn.addEventListener('click', () => {
+    const searchEl = document.getElementById('menuSearch');
+    if (searchEl) searchEl.value = '';
+    renderMenu(btn.dataset.filter);
+  });
 });
 
-// ===== 4) MODAL LOGIC =====
+
+const searchEl = document.getElementById('menuSearch');
+if (searchEl) searchEl.addEventListener('input', debounce(handleSearchInput, 180));
+
 const modal = document.getElementById('modal');
 const mImg = document.getElementById('modal-img');
 const mTitle = document.getElementById('modal-title');
@@ -290,5 +328,5 @@ modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); }
 const closeBtn = document.getElementById('closeModal');
 if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
-// ===== 5) INIT =====
+
 renderMenu('all');
