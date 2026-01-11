@@ -18,11 +18,3 @@ buttons.forEach(btn => {
     });
     filterContainer.appendChild(button);
 });
-
-console.log("JS aktif");
-
-const filterContainer = document.getElementById("filterContainer");
-const testButton = document.createElement("button");
-testButton.textContent = "Tes Tombol";
-filterContainer.appendChild(testButton);
-
